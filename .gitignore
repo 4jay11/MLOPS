@@ -4,6 +4,3 @@
 # Ignore the webhook listener script
 webhook_listener.py
 
-# Ignore any markdown info or documentation files
-info.md
-
