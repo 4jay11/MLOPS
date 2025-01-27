@@ -8,8 +8,7 @@ RUN python -m venv /venv
 # Set the working directory in the container
 WORKDIR /app
 
-# Copy requirements.txt before other files to leverage Docker cache
-COPY requirements.txt .
+# Install dependencies
 
 RUN pip install pandas 
 RUN pip install numpy 
