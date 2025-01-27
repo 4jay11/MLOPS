@@ -1,14 +1,27 @@
-FROM python:3.9-slim
+# Use the official Python image as base
+FROM python:3.12.2
 
+# Set environment variables
+ENV PYTHONDONTWRITEBYTECODE 1
+ENV PYTHONUNBUFFERED 1
+RUN python -m venv /venv
+# Set the working directory in the container
 WORKDIR /app
 
-COPY requirements.txt ./
+# Copy requirements.txt before other files to leverage Docker cache
+COPY requirements.txt .
 
-# Update pip and install dependencies
-RUN pip install --no-cache-dir --upgrade pip && \
-    pip install --no-cache-dir -r requirements.txt
+RUN pip install pandas 
+RUN pip install numpy 
+RUN pip install scikit-learn
+RUN pip install streamlit
 
+# Copy the backend source code to the working directory
+COPY . .
+
+# Copy Streamlit app and other necessary files
 COPY streamlit_app ./streamlit_app
 COPY diabetes.csv ./diabetes.csv
 
-CMD ["streamlit", "run", "streamlit_app/app.py", "--server.port=8501", "--server.address=0.0.0.0"]
+# Run Streamlit app
+CMD ["streamlit", "run", "streamlit_app/app.py"]
