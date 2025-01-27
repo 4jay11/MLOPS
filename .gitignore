@@ -1,3 +1,25 @@
-./env
-./webhook_listener.py
-./info.md
+# Ignore the environment directory or file
+.env
+
+# Ignore the webhook listener script
+webhook_listener.py
+
+# Ignore any markdown info or documentation files
+info.md
+
+# Ignore logs, temp files, and system files
+*.log
+*.tmp
+.DS_Store
+
+# Ignore Python cache files
+__pycache__/
+*.py[cod]
+*.so
+
+# Ignore ngrok configuration or metadata (if any)
+ngrok.log
+ngrok.yml
+
+# Ignore Docker-related files (if applicable)
+docker-compose.override.yml
