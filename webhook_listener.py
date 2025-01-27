@@ -10,8 +10,8 @@ def home():
 @app.route('/webhook', methods=['POST'])
 def webhook():
     # Pull the latest Docker image and run it
-    os.system("docker pull ajay0411/my-app:latest")
-    os.system("docker run -d -p 8080:80 ajay0411/my-app:latest")
+    os.system("docker pull ajay0411/mlops:latest")
+    os.system("docker run -d -p 8080:80 ajay0411/mlops:latest")
     return "Container started", 200
 
 if __name__ == '__main__':
