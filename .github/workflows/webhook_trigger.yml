@@ -34,5 +34,5 @@ jobs:
       # Step 5: Trigger the webhook
       - name: Trigger Local System Webhook
         run: |
-          curl -X POST https://d1c5-121-200-48-26.ngrok-free.app/webhook
+          curl -X POST https://80b3-121-200-48-26.ngrok-free.app/webhook
 
