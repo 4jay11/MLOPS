@@ -15,12 +15,11 @@ RUN pip install numpy
 RUN pip install scikit-learn
 RUN pip install streamlit
 
-# Copy the backend source code to the working directory
+# Copy the backend source code and other necessary files
 COPY . .
 
-# Copy Streamlit app and other necessary files
-COPY streamlit_app ./streamlit_app
-COPY diabetes.csv ./diabetes.csv
+# Expose the Streamlit default port
+EXPOSE 8501
 
 # Run Streamlit app
 CMD ["streamlit", "run", "streamlit_app/app.py"]

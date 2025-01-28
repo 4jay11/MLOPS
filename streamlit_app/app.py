@@ -5,7 +5,7 @@ from sklearn.tree import DecisionTreeClassifier
 
 # Load the data
 
-data = pd.read_csv("../diabetes.csv")
+data = pd.read_csv("diabetes.csv")
 x = data.iloc[:, :-1]
 y = data.iloc[:, -1]
 
