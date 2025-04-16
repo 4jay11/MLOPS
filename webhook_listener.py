@@ -13,13 +13,13 @@ app = Flask(__name__)
 def webhook():
     try:
         # Pull the Docker image
-        image_name = "ajay0411/mlops+react:latest"
+        image_name = "ajay0411/mlops-react:latest"
         pull_result = subprocess.run(['docker', 'pull', image_name], capture_output=True, text=True)
         if pull_result.returncode != 0:
             return jsonify({'error': pull_result.stderr}), 500
         
         # Run the Docker container
-        container_name = 'mlops+react' # Default name
+        container_name = 'mlops-react' # Default name
         port_mapping = '8501:8501'  # Default port mapping
         
         run_result = subprocess.run(

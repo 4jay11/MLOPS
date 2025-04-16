@@ -24,12 +24,12 @@ jobs:
       # Step 3: Build the Docker image
       - name: Build Docker image
         run: |
-          docker build -t ${{ secrets.USER_NAME }}/mlops+react:latest .
+          docker build -t ${{ secrets.USER_NAME }}/mlops-react:latest .
 
       # Step 4: Push the Docker image to Docker Hub
       - name: Push Docker image
         run: |
-          docker push ${{ secrets.USER_NAME }}/mlops+react:latest
+          docker push ${{ secrets.USER_NAME }}/mlops-react:latest
 
       # Step 5: Trigger the webhook
       - name: Trigger Local System Webhook
