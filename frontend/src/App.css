@@ -1,0 +1,193 @@
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(to right, #f0f4f8, #d9e2ec);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  overflow-x: hidden;
+}
+
+/* Main container */
+.diabetes-form-container {
+  width: 100%;
+  max-width: 1000px;
+  background-color: #f4f7f8;
+  padding: 40px;
+  border-radius: 15px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+/* Title */
+.form-title {
+  font-size: 28px;
+  font-weight: 700;
+  text-align: center;
+  color: #333;
+  margin-bottom: 30px;
+}
+
+/* Form layout */
+.diabetes-form {
+  display: grid;
+   grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 20px 30px;
+}
+
+/* Form field */
+.form-field {
+  display: flex;
+  flex-direction: column;
+}
+
+.field-label {
+  font-weight: 600;
+  margin-bottom: 6px;
+  color: #555;
+  font-size: 14px;
+}
+
+.field-input {
+  padding: 10px 12px;
+  font-size: 14px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.field-input:focus {
+  border-color: #3182ce;
+}
+
+/* Submit button */
+.submit-button {
+  grid-column: span 2;
+  background-color: #3182ce;
+  color: #fff;
+  padding: 12px;
+  font-size: 16px;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.submit-button:hover {
+  background-color: #2563eb;
+}
+
+/* Result section */
+.result {
+  margin-top: 25px;
+  padding: 15px 20px;
+  font-size: 18px;
+  font-weight: 600;
+  border-radius: 8px;
+  animation: fadeIn 0.5s ease-in-out;
+  text-align: center;
+  border-left: 6px solid;
+  
+}
+
+.result.approved {
+  background-color: #e6fffa;
+  border-left-color: #38b2ac; 
+}
+
+.result.rejected {
+  background-color: #fff5f5;
+  border-left-color: #e53e3e;
+}
+
+/* Error message */
+.error-message {
+  margin-top: 15px;
+  padding: 12px;
+  font-size: 15px;
+  font-weight: 500;
+  color: #e53e3e;
+  background-color: #fff5f5;
+  border: 1px solid #feb2b2;
+  border-radius: 8px;
+  text-align: center;
+}
+
+
+
+/* Fade-in animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive tweaks */
+@media (max-width: 1024px) {
+  .diabetes-form-container {
+    padding: 35px 20px;
+  }
+  .diabetes-form {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  .form-title {
+    font-size: 26px;
+  }
+
+  .submit-button {
+    grid-column: span 1;
+    margin-top: 22px;
+    height: 65%;
+    width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .diabetes-form {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .form-title {
+    font-size: 24px;
+  }
+
+  .submit-button {
+    grid-column: span 1;
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .diabetes-form-container {
+    padding: 25px 15px;
+  }
+
+  .form-title {
+    font-size: 22px;
+  }
+
+  .field-label,
+  .field-input {
+    font-size: 13px;
+  }
+
+  .submit-button {
+    font-size: 15px;
+    padding: 10px;
+  }
+}
